@@ -10,9 +10,13 @@
 <body class="flex flex-col h-screen justify-between">
   {% include header.html %}
 
-  <article class="prose mb-auto p-8">
-    {{ content }}
-  </article>
+  <main class="prose mb-auto p-8">
+    <h1>{{ page.title }}</h1>
+
+    <article>
+      {{ content }}
+    </article>
+  </main>
 
   {% include footer.html %}
 </body>

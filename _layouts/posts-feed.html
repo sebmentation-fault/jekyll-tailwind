@@ -11,11 +11,22 @@
   {% include header.html %}
 
   <main class="prose mb-auto p-8">
+
     <h1>{{ page.title }}</h1>
 
-    <article>
-      {{ content }}
-    </article>
+    <!-- NOTE: source: https://jekyllrb.com/docs/posts/ -->
+    <!-- <ul class="list-none"> -->
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        <h2><a href="{{ post.url | relative_url }}" class="no-underline">{{ post.title }}</a></h2>
+        <div>
+          {{ post.date }}
+          {{ post.excerpt }}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
   </main>
 
   {% include footer.html %}
