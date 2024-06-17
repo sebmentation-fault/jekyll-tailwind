@@ -13,8 +13,18 @@
 
   <main class="flex-1 mx-auto p-8 prose">
     <h1>{{ page.title }}</h1>
-    <p>Date: {{ page.date }}</p>
-    <p>Categories: {{ page.categories }}</p>
+
+    <ul class="flex flex-row flex-wrap items-start list-none space-x-4 bg-gray-100 rounded-md">
+      <li class="rounded-sm py-0.5 text-sm border border-gray-600 bg-gray-200 px-1.5">{{ page.date }}</li>
+
+      {% for category in page.categories %}
+      <li class="rounded-full border border-red-400 bg-red-200 px-2 py-0.5 text-sm">{{ category }}</li>
+      {% endfor %}
+
+      {% for tag in page.tags %}
+      <li class="rounded-full border border-sky-400 bg-sky-200 px-2 py-0.5 text-sm">{{ tag }}</li>
+      {% endfor %}
+    </ul>
 
     <article>
       {{ content }}

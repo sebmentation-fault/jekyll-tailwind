@@ -2,12 +2,13 @@
 layout: post
 title:  Jekyll-Tailwind Version 0.1.
 date:   2024-06-17 00:00:58
-categories: jekyll tailwind
+categories: jekyll updates
+tags: tailwind no-node btw
 ---
 I did it! I created a site using Jekyll and tailwind! Without `node.js`{:.javascript}!
 
 I even made a helper script to make a new Jekyll post file with some basic front
-matter (more on that later).
+matter (check my dotfiles).
 
 To my future self, or anyone else who would like to know, the following should be
 a nice guide for how to get started on something similar.

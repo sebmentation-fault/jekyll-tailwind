@@ -13,6 +13,9 @@
 
   <main class="flex-1 mx-auto p-8 prose">
     <h1>{{ page.title }}</h1>
+    <article>
+      {{ content }}
+    </article>
 
     <!-- NOTE: source: https://jekyllrb.com/docs/posts/ -->
     <ul>
@@ -20,8 +23,19 @@
       <li>
         <h2><a href="{{ post.url | relative_url }}" class="no-underline">{{ post.title }}</a></h2>
         <div>
-          {{ post.date }}
-          {{ post.excerpt }}
+          <ul class="flex flex-row flex-wrap items-start list-none space-x-4 bg-gray-100 rounded-md">
+            <li class="rounded-sm py-0.5 text-sm border border-gray-600 bg-gray-200 px-1.5">{{ post.date | split: " " |
+              first }}</li>
+
+            {% for category in post.categories %}
+            <li class="rounded-full border border-red-400 bg-red-200 px-2 py-0.5 text-sm">{{ category }}</li>
+            {% endfor %}
+
+            {% for tag in post.tags %}
+            <li class="rounded-full border border-sky-400 bg-sky-200 px-2 py-0.5 text-sm">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+          <span>{{ post.excerpt }}</span>
         </div>
       </li>
       {% endfor %}
