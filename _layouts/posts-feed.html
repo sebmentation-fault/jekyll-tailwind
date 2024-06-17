@@ -4,18 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/javascript.css' | relative_url }}">
   <title>{{ site.title }}</title>
 </head>
 
 <body class="flex flex-col h-screen justify-between">
   {% include header.html %}
 
-  <main class="prose mb-auto p-8">
-
+  <main class="flex-1 mx-auto p-8 prose">
     <h1>{{ page.title }}</h1>
 
     <!-- NOTE: source: https://jekyllrb.com/docs/posts/ -->
-    <!-- <ul class="list-none"> -->
     <ul>
       {% for post in site.posts %}
       <li>

@@ -1,11 +1,24 @@
 <footer class="bg-gray-800 text-white py-6">
-	<div class="container mx-auto flex justify-between items-center">
-		<div class="text-lg font-bold">{{ site.title }}</div>
-		<div class="flex space-x-4">
+	<div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+		<div class="flex flex-col">
+			<div class="text-lg font-bold">{{ site.title }}</div>
+			<div class="text-sm text-gray-400">{{ site.description }}</div>
+		</div>
+
+		<div class="flex justify-center md:justify-end space-x-4">
 			<a href="https://www.github.com/{{ site.github.username }}"
-				class="hover:text-gray-400">GitHub</a>
+				class="hover:text-gray-400 flex flex-col items-center">
+				<img src="{{ '/assets/icons/github-mark-white.svg' | relative_url }}" class="w-5 h-5"
+					alt="GitHub">
+				<span class=>GitHub</span>
+			</a>
+
 			<a href="https://www.twitter.com/{{ site.twitter_username }}"
-				class="hover:text-gray-400">Twitter</a>
+				class="hover:text-gray-400 flex flex-col items-center">
+				<img src="{{ '/assets/icons/twitter.svg' | relative_url }}" class="w-5 h-5"
+					alt="Twitter">
+				<span>Twitter</span>
+			</a>
 		</div>
 	</div>
 </footer>

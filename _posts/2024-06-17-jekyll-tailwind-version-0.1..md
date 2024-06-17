@@ -85,13 +85,15 @@ module.exports = {
   content: [
     './_includes/*.html',
     './_layouts/*.html',
+    './_posts/*.md',
+    './*.md',
   ],
   theme: {
     extend: {},
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
+    require('@tailwindcss/typography')
   ],
 }
 ```
@@ -119,6 +121,11 @@ I made some layouts too:
 
 These layouts all rely on the header and footer includes. It's a small bit of separation
 of concerns.
+
+One last thing -- Jekyll knows how to add code blocks, but does not ship the CSS
+automagically, so I took a
+[native CSS](https://jwarby.github.io/jekyll-pygments-themes/languages/javascript.html#)
+theme compatible with Jekyll's engine, Rogue, and included it as an asset.
 
 Hopefully this project is easy to maintain and there isn't any breaking change that
 will wipe away this milestone...
